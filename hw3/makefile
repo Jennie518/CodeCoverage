@@ -1,24 +1,54 @@
-CXX = g++
-CXXFLAGS = -std=c++11
-CXXSOURCE = ${wildcard *.cpp}
+#Target: all checks if prereq executable is up to date
+#
+#Target: run checks if the executable file named executable is up to date
+	#runs the executable file
+#
+#Target: clean
+	#removes all .o file and the executable file named executable
+#
+#Target: .PHONY explicitely tells make that these targets are not associated with files
+#
+#Target: make checks if the .cpp and .h files are up to date
+	#Creates .o files and executable
+#
+#Target: printM
+	#prints out values of macros
 
-all: msdscript
 
-%.o: %.cpp %.h
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+CXX = c++
+CFLAGS = -std=c++11
+CXXSOURCE = cmdline.cpp main.cpp  Expr.cpp
+HEADERS = cmdline.hpp catch.hpp Expr.hpp
+CXXOBJECT = cmdline.o main.o Expr.o
 
-OBJECTS = $(CXXSOURCE:.cpp=.o)
+msdscript: $(CXXSOURCE) $(HEADERS)
+	$(CXX) $(CFLAGS) -c $(CXXSOURCE)
+	$(CXX) $(CFLAGS) -o msdscript $(CXXOBJECT)
 
-msdscript: $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o msdscript $(OBJECTS)
-
+run: msdscript
+	./msdscript
 
 .PHONY: test
 test: msdscript
 	./msdscript --test
 
-
 .PHONY: clean
 clean:
-	rm -f *.o msdscript
+	rm -rf *.o msdscript
+
+.PHONY: printM
+printM:
+	echo $(CXXSOURCE) $(CXX) $(CFLAGS) $(HEADERS) $(CXXOBJECT)
+
+
+
+
+
+
+
+
+
+
+
+
 
