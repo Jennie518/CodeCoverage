@@ -12,9 +12,10 @@ OBJECTS = $(CXXSOURCE:.cpp=.o)
 msdscript: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o msdscript $(OBJECTS)
 
+test: msdscript
+	./msdscript --test
+
 .PHONY: clean
 clean:
 	rm -f *.o msdscript
 
-test: msdscript
-	./msdscript --test
