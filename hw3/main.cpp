@@ -8,5 +8,6 @@ int main(int argc, char **argv) {
     if (Catch::Session().run() != 0) {
         exit(1);
     };
+
     return 0;
 }
