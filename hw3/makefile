@@ -12,6 +12,7 @@ OBJECTS = $(CXXSOURCE:.cpp=.o)
 msdscript: $(OBJECTS)
 	$(CXX) $(CXXFLAGS) -o msdscript $(OBJECTS)
 
+.PHONY: test
 test: msdscript
 	./msdscript --test
 
