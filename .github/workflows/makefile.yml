@@ -14,5 +14,6 @@ jobs:
 
     - name: Run Test
       run: make test
+      working-directory: hw3
 
   
