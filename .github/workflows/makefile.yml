@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v1
 
     - name: Run Test
-      run: make clean
+      run: make test
       working-directory: hw3
 
   
