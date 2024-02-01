@@ -17,9 +17,9 @@
 
 CXX = c++
 CFLAGS = -std=c++11
-CXXSOURCE = cmdline.cpp main.cpp  Expr.cpp
-HEADERS = cmdline.hpp catch.hpp Expr.hpp
-CXXOBJECT = cmdline.o main.o Expr.o
+CXXSOURCE = cmdline.cpp main.cpp  expr.cpp
+HEADERS = cmdline.h catch.h expr.h
+CXXOBJECT = cmdline.o main.o expr.o
 
 msdscript: $(CXXSOURCE) $(HEADERS)
 	$(CXX) $(CFLAGS) -c $(CXXSOURCE)
