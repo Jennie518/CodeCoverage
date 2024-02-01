@@ -15,3 +15,6 @@ msdscript: $(OBJECTS)
 .PHONY: clean
 clean:
 	rm -f *.o msdscript
+
+test: msdscript
+	./msdscript --test
