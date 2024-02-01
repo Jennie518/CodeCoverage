@@ -28,11 +28,11 @@ msdscript: $(CXXSOURCE) $(HEADERS)
 run: msdscript
 	./msdscript
 
-.PHONY: test
+.PHONY:
 test: msdscript
 	./msdscript --test
 
-.PHONY: clean
+.PHONY:
 clean:
 	rm -rf *.o msdscript
 
