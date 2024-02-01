@@ -145,8 +145,3 @@ void test_test_argument() {
         // Handle the error: this is unexpected.
     }
 }
-TEST_CASE("FailingTestForCoverage") {
-    // This test is designed to fail intentionally
-    // for the purpose of code coverage for the test runner's exit path.
-    REQUIRE(false);
-}

@@ -5,6 +5,9 @@
 
 int main(int argc, char **argv) {
     use_arguments(argc, argv);
-    (Catch::Session().run() != 0) {
+    if(Catch::Session().run() != 0) {
         exit(1);
+    }
+//    return 0;
+
 }
